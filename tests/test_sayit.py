@@ -23,7 +23,6 @@ from sayit import cli
         (7, "seven"),
         (8, "eight"),
         (9, "nine"),
-
     ],
 )
 def test_single_digit(number, human_text):
@@ -34,9 +33,24 @@ def test_single_digit(number, human_text):
     "number, human_text",
     [
         (10, "ten"),
+        (20, "twenty"),
     ],
 )
-def test_up_double_digit(number, human_text):
+def test_regular_double_digit(number, human_text):
+    assert say(number) == human_text
+
+
+@pytest.mark.parametrize(
+    "number, human_text",
+    [
+        (21, "twenty one"),
+        (45, "forty five"),
+        (145, "one hundred forty five"),
+        (945, "nine hundred forty five"),
+        (42311, "forty two thousand three hundred eleven"),
+    ],
+)
+def test_random_numbers(number, human_text):
     assert say(number) == human_text
 
 

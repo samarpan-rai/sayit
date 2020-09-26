@@ -47,6 +47,12 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+install-dev:
+	pip install -r requirements_dev.txt
+
+black:
+	black sayit tests setup.py 
+
 lint: ## check style with flake8
 	flake8 sayit tests
 
