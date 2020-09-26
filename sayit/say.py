@@ -2,7 +2,8 @@
 
 from .conversion import int2text
 
-def sayit(number:int):
+
+def say(number: int):
     """
     Convert large number to  sayable text format.
 
@@ -10,6 +11,6 @@ def sayit(number:int):
         number : A (large) number
     """
 
-    # Handle the first 10 positive numbers 
-    if 0 <= number < 10:
-        return int2text(number)
+    # Handle the first 10 positive numbers
+    
+    return int2text(number)
